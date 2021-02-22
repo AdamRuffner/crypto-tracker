@@ -1,38 +1,29 @@
-import React from "react";
-import "./Coin.css";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const Coin = ({
-  name,
-  image,
-  symbol,
-  price,
-  volume,
-  priceChange,
-  marketcap,
-}) => {
+function Coin() {
+  const [detail, setDetail] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`https://api.coingecko.com/api/v3/coins/${id}`)
+      .then((res) => {
+        setDetail(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
+
   return (
-    <div className="coin-container">
-      <div className="coin-row">
-        <div className="coin">
-          <img src={image} alt="crypto" />
-          <h1>{name}</h1>
-          <p className="coin-symbol">{symbol}</p>
-        </div>
-        <div className="coin-data">
-          <p className="coin-price">${price}</p>
-          <p className="coin-volume">${volume.toLocaleString()}</p>
-          {priceChange < 0 ? (
-            <p className="coin-percent red">{priceChange.toFixed(2)}%</p>
-          ) : (
-            <p className="coin-percent green">{priceChange.toFixed(2)}%</p>
-          )}
-          <p className="coin-marketcap">
-            Mkt Cap: ${marketcap.toLocaleString()}
-          </p>
-        </div>
-      </div>
+    <div className="id-form">
+      <h1>{detail.name}</h1>
+      <h2>{detail.symbol}</h2>
+      <h3>{detail.categories}</h3>
+      {/* <h4>Description: {[detail.description.en]}</h4> */}
     </div>
   );
-};
+}
 
 export default Coin;

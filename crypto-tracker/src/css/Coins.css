@@ -3,6 +3,7 @@
   justify-content: center;
 }
 
+
 .coin-row {
   display: flex;
   flex-direction: row;
@@ -65,3 +66,5 @@
 .green {
   color: #11d811;
 }
+
+
