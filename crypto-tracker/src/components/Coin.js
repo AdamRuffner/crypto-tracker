@@ -11,17 +11,21 @@ function Coin() {
       .get(`https://api.coingecko.com/api/v3/coins/${id}`)
       .then((res) => {
         setDetail(res.data);
-        console.log(res.data);
+        console.log("res.data", res.data)
+        console.log("res.data.image", res.data.image)
+        console.log("detail", detail)
+        console.log("detail.image", detail.image)
       })
       .catch((err) => console.log(err));
-  }, [id]);
+  }, []);
 
   return (
     <div className="id-form">
       <h1>{detail.name}</h1>
       <h2>{detail.symbol}</h2>
       <h3>{detail.categories}</h3>
-      {/* <h4>Description: {[detail.description.en]}</h4> */}
+      {/* <img src={detail.image.small} alt='crypto' /> */}
+      {/* <h4>Description: {detail.description.en}</h4> */}
     </div>
   );
 }

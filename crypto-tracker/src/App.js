@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import AllCoins from "./components/AllCoins";
 import Coin from "./components/Coin";
+import Login from './components/Login'
 
 function App() {
   return (
@@ -8,6 +9,10 @@ function App() {
       <Switch>
         <Route path="/details/:id">
           <Coin />
+        </Route>
+
+        <Route path='/login'>
+          <Login />
         </Route>
 
         <Route path="/">

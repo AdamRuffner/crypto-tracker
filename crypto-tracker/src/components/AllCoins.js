@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { Link } from 'react-router-dom';
+import { navLink } from 'react-router-dom';
 import axios from "axios";
 import "../css/AllCoins.css";
 import Coins from './Coins';
@@ -17,7 +17,7 @@ function AllCoins() {
         setCoins(res.data);
       })
       .catch((err) => console.log(err));
-  });
+  },[]);
 
   const handleChange = (e) => {
     setSearch(e.target.value);

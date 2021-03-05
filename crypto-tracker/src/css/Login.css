@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-height: 100vh;
+}
+
+.login {
+  display: flex;
+  height: 100vh;
+}
+
+.login img {
+  flex: 1 1 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.form-container {
+  flex: 1 1 50%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-container form {
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  font-size: 1.4rem;
+}
+
+.form-container form h1 {
+  margin: 1.4rem 0 1.4rem 0;
+  font-size: 3rem;
+}
+
+.form-container form label {
+  margin: 1.2rem 0 1.2rem 0;
+  padding: 0.4rem 0 0.4rem 0;
+}
+
+.form-container form input {
+  background-color: white;
+  color: #1a1a1c;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.form-container form input:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.form-container button {
+  width: 10rem;
+  margin-top: 10rem;
+  font-size: 1.4rem;
+  padding: 1.8rem 2.4rem 1.8rem 2.4rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #187bcd;
+  color: white;
+  cursor: pointer;
+}
